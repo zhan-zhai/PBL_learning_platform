@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { addDays, formatDistance } from 'date-fns';
+import { addDays, formatDistance, format } from 'date-fns';
 import { ActivatedRoute } from '@angular/router';
 import { DiscussionService } from '../../../../services/discussion.service';
 import { Discussion } from '../../../../models/discussion';
@@ -57,7 +57,7 @@ export class DiscussionsComponent implements OnInit {
         if (grouper == undefined) {
           discussion['u_name'] = '教师';
           discussion['image'] =
-            'http://123.56.219.88/SuperNova/UploadImage/default.jpg';
+            'http://161.189.51.112:8089/SuperNova/UploadImage/default.jpg';
         } else {
           discussion['u_name'] = grouper['u_name'];
           discussion['image'] = grouper['image'];
@@ -68,10 +68,10 @@ export class DiscussionsComponent implements OnInit {
         discussion['show'] = true;
         discussion['type'] = 'discussion';
         // discussion['index'] = num++;
-        discussion['time_for_show'] = formatDistance(
-          discussion['time'],
-          new Date()
-        );
+        // discussion['time_for_show'] = formatDistance(
+        //   discussion['time'],
+        //   new Date()
+        // );
         this.discussionService
           .getReplyByDid(discussion.d_id)
           .subscribe((data) => {
@@ -82,7 +82,7 @@ export class DiscussionsComponent implements OnInit {
               if (grouper == undefined) {
                 reply['u_name'] = '教师';
                 reply['image'] =
-                  'http://123.56.219.88/SuperNova/UploadImage/default.jpg';
+                  'http://161.189.51.112:8089/SuperNova/UploadImage/default.jpg';
               } else {
                 reply['u_name'] = grouper['u_name'];
                 reply['image'] = grouper['image'];
@@ -90,16 +90,18 @@ export class DiscussionsComponent implements OnInit {
 
               reply['type'] = 'reply';
               reply['show'] = true;
-              reply['time_for_show'] = formatDistance(
-                reply['time'],
-                new Date()
-              );
+              // reply['time_for_show'] = formatDistance(
+              //   reply['time'],
+              //   new Date()
+              // );
               reply['d_index'] = index;
             });
             discussion['replies'] = data.data.replies;
+              console.log(this.discussions);
           });
       });
     });
+    console.log(this.discussions);
   }
 
   data: any[] = [];
@@ -144,7 +146,7 @@ export class DiscussionsComponent implements OnInit {
       image: this.user.image,
     };
 
-    this.discussions[this.reply_discussion_index]['replies'].splice(
+     this.discussions[this.reply_discussion_index]['replies'].splice(
       0,
       0,
       new_reply

@@ -41,7 +41,7 @@
            from reply natural join user natural join (select d_id,p_id from discussion) as dis2pj
            where p_id = #{p_id} and type != 'teacher'
       )as tmp
-    group by tmp.u_id
+    group by tmp.u_id,tmp.u_name
   </select>
 
     <select id="countDiscussionByUidAndPid" resultType="Integer">

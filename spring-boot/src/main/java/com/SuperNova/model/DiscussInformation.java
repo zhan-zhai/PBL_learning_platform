@@ -11,6 +11,11 @@ public class DiscussInformation {
         this.discussNum = (int) discussNum;
     }
 
+    public DiscussInformation(String s_id,long discussNum){
+        this.s_id = s_id;
+        this.discussNum = (int) discussNum;
+    }
+
     public String getS_id() {
         return s_id;
     }

@@ -8,8 +8,8 @@ public final class ProjectConstant {
 
     public static final String IMG_BASE = "/www/wwwroot/www.zhsyy.top/SuperNova/UploadImage/";//上传图片根地址，部署前记得修改
     public static final String File_BASE = "/www/wwwroot/www.zhsyy.top/SuperNova/UploadFile/";//上传文件根地址，部署前记得修改
-    public static final String WEB_IMG_BASE = "http://123.56.219.88/SuperNova/UploadImage/";//前端下载图片根地址，部署前记得修改
-    public static final String WEB_File_BASE = "http://123.56.219.88/SuperNova/UploadFile/";//前端下载文件根地址，部署前记得修改
+    public static final String WEB_IMG_BASE = "http://161.189.51.112:8089/SuperNova/UploadImage/";//前端下载图片根地址，部署前记得修改
+    public static final String WEB_File_BASE = "http://161.189.51.112:8089/SuperNova/UploadFile/";//前端下载文件根地址，部署前记得修改
 
 
     public static final String MODEL_PACKAGE = BASE_PACKAGE + ".model";//生成的Model所在包

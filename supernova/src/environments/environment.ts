@@ -4,9 +4,10 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://123.56.219.88:8081',
+  apiUrl: 'http://161.189.51.112:8081',
   jwtHeader: 'supernova',
-  defaultImgPath: 'http://123.56.219.88/UploadImage/default.img',
+
+  defaultImgPath: 'http://161.189.51.112:8089/UploadImage/default.img',
   deleteU_id: '0',
 };
 
